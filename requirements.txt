@@ -30,3 +30,4 @@ static3==0.7.0
 traitlets==4.3.3
 urllib3==1.25.9
 wcwidth==0.2.5
+psycopg2
