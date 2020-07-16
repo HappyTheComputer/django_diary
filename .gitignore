@@ -3,3 +3,6 @@ djangogirls_venv
 __pycache__
 staticfiles
 db.sqlite3
+# 會導致heroku部署錯誤
+Pipfile
+Pipfile.lock
