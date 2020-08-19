@@ -1,7 +1,7 @@
 deploy heroku
 https://djangogirlstaipei.herokuapp.com/tutorials/deploy-to-heroku/?os=osx
 
-python pipenv
-
 django cmd
 https://docs.djangoproject.com/
+
+python pipenv
