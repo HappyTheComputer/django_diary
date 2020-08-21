@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
     'trips.apps.TripsConfig',
+    'tenyrsdiary.apps.TenyrsdiaryConfig',
 ]
 
 MIDDLEWARE = [
