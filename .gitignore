@@ -1,5 +1,6 @@
 djangogirls_venv
 .privatenote
+.env
 *.pyc
 __pycache__
 staticfiles
