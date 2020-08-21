@@ -5,6 +5,9 @@ __pycache__
 staticfiles
 db.sqlite3
 
+# module資料夾不要上傳
+django/
+
 # 會導致heroku部署錯誤
 Pipfile
 Pipfile.lock
