@@ -34,12 +34,13 @@ body
     align-items: center;
     border-radius: 15px;
     flex-direction: column;
+    overflow: hidden;
     box-shadow: inset -5px -5px 5px rgba(0,0,0,0.2), 
                 inset 5px 5px 5px rgba(255,255,255,0.2);
 }
 .container .box:hover
 {
-    box-shadow: inset -5px -5px 10px rgba(255,255,255.2), 
+    box-shadow: inset -5px -5px 10px rgba(255,255,255,.2), 
                 inset 5px 5px 10px rgba(0,0,0,0.2);
 }
 .container .box .title
@@ -73,27 +74,24 @@ body
     flex-direction: column;
     height: 80%;
     font-size: 0.7em;
-    overflow: hidden;
     margin: 5px;
-    color: #333;
     text-align: center;
 }
 .container .box .add
 {
-    position: relative;
     display: none;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
     overflow: hidden;
-    background: #333;
 }
 .container .box .add a
 {
     font-size: 1em;
     color: #ccc;
     text-align: center;
+    margin: 5px;
     text-decoration: none;
+    border-radius: 30px;
+    background: #333;
+    padding: 5px 10px;
 }
 .container .box:hover .content
 {
@@ -102,4 +100,9 @@ body
 .container .box:hover .add
 {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
