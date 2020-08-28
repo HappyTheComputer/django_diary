@@ -2,18 +2,29 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'tenyrsdiary/style.css' %}">
 
+<div class="bar">
+    <a href="{% url 'tenyrsdiary:pre' %}" class="pre"><</a>
+    <a href="{% url 'tenyrsdiary:index' %}" class="tonow">TODAY</a>
+    <a href="{% url 'tenyrsdiary:next' %}" class="next">></a>
+</div>
+
 <div class="container">
     <div class="box">
         <div class="title">
             <h3 class="tw">心靈反思</h3>
             <h3 class="en">Mind</h3>
         </div>
-        <div class="content">
+        <div class="content mind">
+            {% if diary.mind %}
+            <div>
+                {{ diary.mind }}
+            </div>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">生理</a>
-            <a href="" class="input">精神</a>
-            <a href="" class="input">反省</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">生理</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">精神</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">反省</a>
         </div>
     </div>
     <div class="box">
@@ -22,14 +33,19 @@
             <h3 class="en">Career</h3>
         </div>
         
-        <div class="content">
+        <div class="content career">
+            {% if diary.career %}
+            <div>
+                {{ diary.career }}
+            </div>
+            {% endif %}
             <p>測試人生。</p>
             <p>其實覺得沒啥好說的但是需要大量的文字測試所以只能打一些廢話，還要夠長可以測試換行跟破匡的程度，雖然目前的成果已經覺得自己做的很不賴了，彷彿真的做出些什麼。</p>
             <p>昨天想到做一個給自家人用的表格，留言板還可以綁LineBot自動推訊息很方便！</p>
             <p>夠多廢話了吧，不過換行要怎麼做啊？</p>
         </div>
         <div class="add">
-            <a href="" class="input">+</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">+</a>
         </div>
     </div>
     <div class="box">
@@ -38,12 +54,17 @@
             <h3 class="en">Study</h3>
         </div>
 
-        <div class="content">
+        <div class="content study">
+            {% if diary.study %}
+            <div>
+                {{ diary.study }}
+            </div>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">閱讀</a>
-            <a href="" class="input">研究</a>
-            <a href="" class="input">資訊</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">閱讀</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">研究</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">資訊</a>
         </div>
     </div>
     <div class="box">
@@ -52,25 +73,36 @@
             <h3 class="en">Todo</h3>
         </div>
         
-        <div class="content">
+        <div class="content todo">
 
         </div>
         <div class="add">
-            <a href="" class="input">+</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">+</a>
         </div>
     </div>
     <div class="box">
         <div class="title">
-            <h3 class="tw">109年8月20日<br>星期四</h3>
-            <h3 class="en">2020/08/20<br>Thurday</h3>
+            {% if post.current %}
+                <h3 class="tw">{{ post.today|date:"Y年m月d日<br>l" }}109年8月20日<br>星期四</h3>
+                <h3 class="en">{{ post.today|date:"Y/m/d<br>l" }}</h3>
+            {% else %}
+                <h3 class="tw">民國年 月 日<br>星期 </h3>
+                <h3 class="en">YYYY/MM/DD<br>X-Day</h3>
+            {% endif %}
         </div>
         
-        <div class="content">
+        <div class="content today">
+            {% if diary.weather %}
+            <p>{{ diary.weather }}</p>
+            {% endif %}
+            {% if diary.birth %}
+            <p>{{ diary.birth }}</p>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">天氣</a>
-            <a href="" class="input">紀念</a>
-            <a href="" class="input">壽星</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">天氣</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">紀念</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">壽星</a>
         </div>
     </div>
     <div class="box">
@@ -78,10 +110,15 @@
             <h3 class="tw">人際關係</h3>
             <h3 class="en">Relationship</h3>
         </div>
-        <div class="content">
+        <div class="content relationship">
+            {% if diary.relationship %}
+            <div>
+                {{ diary.relationship }}
+            </div>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">+</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">+</a>
         </div>
     </div>
     <div class="box">
@@ -89,10 +126,15 @@
             <h3 class="tw">財務管理</h3>
             <h3 class="en">Asset</h3>
         </div>
-        <div class="content">
+        <div class="content asset">
+            {% if diary.asset %}
+            <div>
+                {{ diary.asset }}
+            </div>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">+</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">+</a>
         </div>
     </div>
     <div class="box">
@@ -101,10 +143,15 @@
             <h3 class="en">Family</h3>
         </div>
         
-        <div class="content">
+        <div class="content family">
+            {% if diary.family %}
+            <div>
+                {{ diary.family }}
+            </div>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">+</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">+</a>
         </div>
     </div>
     <div class="box">
@@ -113,10 +160,15 @@
             <h3 class="en">Surprise</h3>
         </div>
         
-        <div class="content">
+        <div class="content suprise">
+            {% if diary.suprise %}
+            <div>
+                {{ diary.suprise }}
+            </div>
+            {% endif %}
         </div>
         <div class="add">
-            <a href="" class="input">+</a>
+            <a href="{% url 'tenyrsdiary:input' %}" class="input">+</a>
         </div>
     </div>
 </div>
