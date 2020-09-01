@@ -1,4 +1,12 @@
-# django 部署練習
-Django with Python and Deploy on Heroku
+# Django 練習範本 
 
-[遊記範例](https://djangogirlstrip.herokuapp.com/trips)
+### Programming<br>
+* Python
+* SQLite3
+* Html + CSS
+
+### Example<br>
+
+* trips 遊記部落（[網站](https://djangogirlstrip.herokuapp.com/trips)）
+* polls 投票統計（[網站](https://djangogirlstrip.herokuapp.com/polls)） PS. django官網教學的練習內容
+* ten years diary 十年日記 ([網站](https://djangogirlstrip.herokuapp.com/tenyrsdiary))
