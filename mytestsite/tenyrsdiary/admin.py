@@ -1,21 +1,40 @@
 from django.contrib import admin
-from .models import DayInYesr, Diary, TodoList, BirthDay, MemorialDay, Asset, Family, Suprise, Relationship, Study, Career, Mind
+from .models import Diary, TodoList, Asset, Family, Suprise, Relationship, Study, Career, Mind
 
 # Register your models here.
-class BirthInline(admin.TabularInline):
-    model = BirthDay
+class TodoListInline(admin.TabularInline):
+    model = TodoList
     extra = 1
 
-class MemorialInline(admin.TabularInline):
-    model = MemorialDay
+class AssetInline(admin.TabularInline):
+    model = Asset
     extra = 1
 
-class DairyYrInline(admin.TabularInline):
-    model = Diary
+class FamilyInline(admin.TabularInline):
+    model = Family
     extra = 1
 
-class DayAdmin(admin.ModelAdmin):
-    inlines = [BirthInline, MemorialInline, DairyYrInline] 
+class SupriseInline(admin.TabularInline):
+    model = Suprise
+    extra = 1
 
-admin.site.register(DayInYesr, DayAdmin)
-admin.site.register(Diary)
+class RelationshipInline(admin.TabularInline):
+    model = Relationship
+    extra = 1
+
+class StudyInline(admin.TabularInline):
+    model = Study
+    extra = 1
+
+class CareerInline(admin.TabularInline):
+    model = Career
+    extra = 1
+
+class MindInline(admin.TabularInline):
+    model = Mind
+    extra = 1
+
+class DairyAdmin(admin.ModelAdmin): 
+    inlines = [TodoListInline, AssetInline, FamilyInline, RelationshipInline, StudyInline, CareerInline, MindInline, SupriseInline]
+
+admin.site.register(Diary, DairyAdmin)
